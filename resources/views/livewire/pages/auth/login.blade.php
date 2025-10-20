@@ -28,7 +28,7 @@ new #[Layout('layouts.guest')] class extends Component
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form wire:submit="login">
+    <form wire:submit="login" class="space-y-4 md:space-y-6">
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
@@ -37,7 +37,7 @@ new #[Layout('layouts.guest')] class extends Component
         </div>
 
         <!-- Password -->
-        <div class="mt-4">
+        <div>
             <x-input-label for="password" :value="__('Password')" />
 
             <x-text-input wire:model="form.password" id="password" class="block mt-1 w-full"
@@ -49,21 +49,22 @@ new #[Layout('layouts.guest')] class extends Component
         </div>
 
         <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember" class="inline-flex items-center">
-                <input wire:model="form.remember" id="remember" type="checkbox" class="rounded-sm border-gray-300 text-indigo-600 shadow-xs focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-start">
+                <label for="remember" class="inline-flex items-center">
+                    <input wire:model="form.remember" id="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" name="remember">
+                    <span class="ms-2 text-gray-500 dark:text-gray-300">{{ __('Remember me') }}</span>
+                </label>
+            </div>
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}" wire:navigate>
+                <a class="text-sm font-medium text-gray-700 hover:underline dark:text-gray-50" href="{{ route('password.request') }}" wire:navigate>
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
+        </div>
 
-            <x-primary-button class="ms-3">
+        <div class="">
+            <x-primary-button class="">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>

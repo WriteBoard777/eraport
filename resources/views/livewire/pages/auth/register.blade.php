@@ -37,7 +37,7 @@ new #[Layout('layouts.guest')] class extends Component
 }; ?>
 
 <div>
-    <form wire:submit="register">
+    <form wire:submit="register" class="space-y-4 md:space-y-6">
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />
@@ -76,7 +76,7 @@ new #[Layout('layouts.guest')] class extends Component
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}" wire:navigate>
+            <a class="underline text-sm text-gray-500 dark:text-gray-100 dark:hover:text-[#b8a5ff] hover:text-[#37208B] rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}" wire:navigate>
                 {{ __('Already registered?') }}
             </a>
 
