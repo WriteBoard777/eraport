@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mapels', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+        Schema::create('mapel_user', function (Blueprint $table) {
+            $table->id();
             
-            $table->string('nama_mapel');
-            $table->string('kode_mapel');
+            $table->foreignId('mapel_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mapels');
+        Schema::dropIfExists('mapel_user');
     }
 };

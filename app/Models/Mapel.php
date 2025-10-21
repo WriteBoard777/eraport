@@ -10,23 +10,26 @@ class Mapel extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
         'nama_mapel',
+        'kode_mapel',
     ];
 
-    // Relasi
-    public function user()
+    // Relasi Many-to-Many dengan User
+    public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class, 'mapel_user')
+                    ->withTimestamps();
     }
 
-    public function nilai()
-    {
-        return $this->hasMany(Nilai::class);
-    }
-
+    // Relasi ke TP (Tujuan Pembelajaran)
     public function tp()
     {
         return $this->hasMany(Tp::class);
+    }
+
+    // Relasi ke Nilai
+    public function nilai()
+    {
+        return $this->hasMany(Nilai::class);
     }
 }
