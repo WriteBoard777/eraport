@@ -49,7 +49,7 @@ $maxWidth = [
     class="fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50"
     style="display: {{ $show ? 'block' : 'none' }};"
 >
-    <div
+    {{-- <div
         x-show="show"
         class="fixed inset-0 transform transition-all"
         x-on:click="show = false"
@@ -60,8 +60,8 @@ $maxWidth = [
         x-transition:leave-start="opacity-100"
         x-transition:leave-end="opacity-0"
     >
-        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-    </div>
+        <div class="absolute inset-0 bg-white opacity-75"></div>
+    </div> --}}
 
     <div
         x-show="show"
