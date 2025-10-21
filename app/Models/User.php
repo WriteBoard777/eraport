@@ -21,6 +21,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'kelas',
+        'asal_sekolah',
+        'nama_kepala_sekolah',
+        'npsn',
+        'tahun_ajaran',
+        'semester',
     ];
 
     /**
@@ -45,4 +51,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function siswas() { return $this->hasMany(Siswa::class); }
+    public function mapels() { return $this->hasMany(Mapel::class); }
+    public function tps() { return $this->hasMany(Tp::class); }
+    public function nilais() { return $this->hasMany(Nilai::class); }
 }
