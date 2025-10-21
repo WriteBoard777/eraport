@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 // Livewire Pages
-use App\Livewire\Pages\Dashboard;
 use App\Livewire\Pages\MapelSelect as MapelSelect;
 use App\Livewire\Pages\Siswa\Index as SiswaIndex;
 use App\Livewire\Pages\Nilai\Index as NilaiIndex;
@@ -13,7 +12,7 @@ Route::view('/', 'welcome')->name('welcome');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     // Dashboard
-    Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    Route::view('/dashboard', 'dashboard')->name('dashboard');
 
     // Mapel
     Route::get('/mapel/pilih', MapelSelect::class)->name('mapel.select');
