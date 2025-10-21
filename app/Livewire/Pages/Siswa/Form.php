@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Siswa;
+namespace App\Livewire\Pages\Siswa;
 
 use Livewire\Component;
 use App\Models\Siswa;

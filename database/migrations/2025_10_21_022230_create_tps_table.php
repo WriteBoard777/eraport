@@ -14,8 +14,12 @@ return new class extends Migration
         Schema::create('tps', function (Blueprint $table) {
             $table->uuid('id')->primary();
             
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignUuid('mapel_id')->constrained()->cascadeOnDelete();
+            $table->uuid('user_id'); // ubah ke uuid
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->uuid('mapel_id'); // ubah ke uuid
+            $table->foreign('mapel_id')->references('id')->on('mapels')->onDelete('cascade');
+            
             $table->text('deskripsi');
             $table->timestamps();
         });

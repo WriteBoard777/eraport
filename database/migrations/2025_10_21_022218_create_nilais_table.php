@@ -14,9 +14,14 @@ return new class extends Migration
         Schema::create('nilais', function (Blueprint $table) {
             $table->uuid('id')->primary();
 
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignUuid('siswa_id')->constrained()->cascadeOnDelete();
-            $table->foreignUuid('mapel_id')->constrained()->cascadeOnDelete();
+            $table->uuid('user_id'); // ubah ke uuid
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->uuid('siswa_id'); // ubah ke uuid
+            $table->foreign('siswa_id')->references('id')->on('siswas')->onDelete('cascade');
+            
+            $table->uuid('mapel_id'); // ubah ke uuid
+            $table->foreign('mapel_id')->references('id')->on('mapels')->onDelete('cascade');
             
             $table->integer('nilai_harian')->nullable();
             $table->integer('nilai_uts')->nullable();

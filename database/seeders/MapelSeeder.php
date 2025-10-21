@@ -13,10 +13,17 @@ class MapelSeeder extends Seeder
         $mapelList = [
             ['nama_mapel' => 'Matematika', 'kode_mapel' => 'MTK'],
             ['nama_mapel' => 'Bahasa Indonesia', 'kode_mapel' => 'BINDO'],
-            ['nama_mapel' => 'IPA', 'kode_mapel' => 'IPA'],
-            ['nama_mapel' => 'IPS', 'kode_mapel' => 'IPS'],
+            ['nama_mapel' => 'IPAS', 'kode_mapel' => 'IPAS'],
+            ['nama_mapel' => 'Pendidikan Pancasila', 'kode_mapel' => 'PP'],
             ['nama_mapel' => 'Pendidikan Agama Islam', 'kode_mapel' => 'PAI'],
             ['nama_mapel' => 'PJOK', 'kode_mapel' => 'PJOK'],
+            ['nama_mapel' => 'Bahasa Inggris', 'kode_mapel' => 'BING'],
+            ['nama_mapel' => 'Bahasa Cirebon', 'kode_mapel' => 'BC'],
+            ['nama_mapel' => 'Bahasa Sunda', 'kode_mapel' => 'BS'],
+            ['nama_mapel' => 'Seni Rupa', 'kode_mapel' => 'SR'],
+            ['nama_mapel' => 'Seni Tari', 'kode_mapel' => 'STI'],
+            ['nama_mapel' => 'Seni Teater', 'kode_mapel' => 'STA'],
+            ['nama_mapel' => 'Seni Musik', 'kode_mapel' => 'SM'],
         ];
 
         foreach ($mapelList as $mapel) {

@@ -14,11 +14,13 @@ return new class extends Migration
         Schema::create('siswas', function (Blueprint $table) {
             $table->uuid('id')->primary();
             
-            $table->foreignUuid('user_id')->constrained('users')->onDelete('cascade');
+            $table->uuid('user_id'); // ubah ke uuid
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            
             $table->string('nis')->unique();
             $table->string('nama');
             $table->enum('jenis_kelamin', ['L', 'P']);
-            $table->json('nama_orang_tua')->nullable(); // bisa lebih dari satu
+            $table->json('nama_orang_tua')->nullable();
             $table->timestamps();
         });
     }
