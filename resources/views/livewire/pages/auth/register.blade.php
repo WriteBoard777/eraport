@@ -30,9 +30,9 @@ new #[Layout('layouts.guest')] class extends Component
 
         event(new Registered($user = User::create($validated)));
 
-        Auth::login($user);
+        // Auth::login($user);
 
-        $this->redirect(route('dashboard', absolute: false), navigate: true);
+        $this->redirect(route('login', absolute: false), navigate: true);
     }
 }; ?>
 
@@ -76,12 +76,13 @@ new #[Layout('layouts.guest')] class extends Component
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-500 dark:text-gray-100 dark:hover:text-[#b8a5ff] hover:text-[#37208B] rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}" wire:navigate>
-                {{ __('Already registered?') }}
+            <a class="underline text-sm text-gray-500 dark:text-gray-100 dark:hover:text-[#b8a5ff] hover:text-[#37208B] rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" 
+                href="{{ route('login') }}" wire:navigate>
+                Already registered?
             </a>
 
             <x-primary-button class="ms-4">
-                {{ __('Register') }}
+                Register
             </x-primary-button>
         </div>
     </form>
